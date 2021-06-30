@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:news_application_redux/Screens/IbexLabTestScreens/Widgets/Banner.dart';
+import 'package:news_application_redux/Screens/IbexLabTestScreens/Widgets/CustomAppBarWidget.dart';
 import 'package:news_application_redux/Screens/IbexLabTestScreens/Widgets/DropdownWidget.dart';
 import 'package:news_application_redux/Screens/IbexLabTestScreens/Widgets/FieldWidget.dart';
 
@@ -10,30 +11,7 @@ class Screen2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          leading: GestureDetector(
-            onTap: () => {},
-            child: Icon(
-              Icons.menu,
-              color: Colors.black,
-            ),
-          ),
-          title: Text(
-            "Text",
-            style: TextStyle(color: Colors.black),
-          ),
-          centerTitle: false,
-          actions: <Widget>[
-            Padding(
-              padding: EdgeInsets.only(right: 20),
-              child: GestureDetector(
-                onTap: () => {},
-                child: Icon(Icons.more_vert, color: Colors.black,),
-              ),
-            )
-          ],
-        ),
+        appBar: CustomAppBarWidget(appBar: AppBar(),),
         body: Container(
           child: Column(
             children: [
