@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:news_application_redux/Screens/IbexLabTestScreens/Widgets/TextInputLabelWidget.dart';
 
 class DropdownWidget extends StatefulWidget {
   final Icon icon;
@@ -24,12 +25,7 @@ class _DropdownWidgetState extends State<DropdownWidget> {
       padding: const EdgeInsets.only(top: 20.0),
       child: Column(
         children: [
-          Row(
-            children: [
-              icon ?? Icon(Icons.widgets),
-              Text(label),
-            ],
-          ),
+          TextInputLabelWidget(icon: icon, label: label),
           Container(
             padding: EdgeInsets.only(top: 5),
             height: 60,

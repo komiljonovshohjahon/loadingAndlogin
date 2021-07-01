@@ -11,7 +11,8 @@ class ButtonRowWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(20),
-      width: 150,
+      width: 200,
+      height: 90.0,
       child: TextButton(
         onPressed: () {},
         child: Text(text),

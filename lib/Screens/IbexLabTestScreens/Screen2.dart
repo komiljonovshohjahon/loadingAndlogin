@@ -4,6 +4,7 @@ import 'package:news_application_redux/Screens/IbexLabTestScreens/Widgets/Banner
 import 'package:news_application_redux/Screens/IbexLabTestScreens/Widgets/CustomAppBarWidget.dart';
 import 'package:news_application_redux/Screens/IbexLabTestScreens/Widgets/DropdownWidget.dart';
 import 'package:news_application_redux/Screens/IbexLabTestScreens/Widgets/FieldWidget.dart';
+import 'package:news_application_redux/Screens/IbexLabTestScreens/Widgets/FormWidget.dart';
 
 import 'Widgets/ButtonsRowWidget.dart';
 
@@ -11,44 +12,14 @@ class Screen2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: CustomAppBarWidget(appBar: AppBar(),),
+        appBar: CustomAppBarWidget(
+          appBar: AppBar(),
+        ),
         body: Container(
           child: Column(
             children: [
               BannerWidget(),
-              Container(
-                  alignment: Alignment.center,
-                  padding: EdgeInsets.all(30),
-                  child: Column(
-                    children: [
-                      DropdownWidget(
-                        label: "Cloud Server URL",
-                        icon: Icon(Icons.cloud_queue),
-                        items: ["Test1", "Test2"],
-                      ),
-                      DropdownWidget(
-                          label: "Domain",
-                          icon: Icon(Icons.dashboard_outlined),
-                          items: ["Test1", "Test2"]),
-                      FieldWidget(
-                          label: "Store ID",
-                          icon: Icon(Icons.store_mall_directory_outlined)),
-                      FieldWidget(
-                          label: "Enter Password",
-                          icon: Icon(Icons.lock_outline)),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 5),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            ButtonRowWidget(color: Color(0xFFFF6D00), text: "test1"),
-                            ButtonRowWidget(color: Color(0xFF6D6D70), text: "test2")
-                          ],
-                        ),
-                      )
-                    ],
-                  )
-              )
+              FormWidget()
             ],
           ),
         ));

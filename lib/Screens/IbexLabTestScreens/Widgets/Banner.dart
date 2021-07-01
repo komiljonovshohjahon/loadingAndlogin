@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:news_application_redux/Screens/IbexLabTestScreens/Widgets/BannerIconWidget.dart';
 
-class BannerWidget extends StatelessWidget{
+class BannerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return  Container(
+    return Container(
       color: Color(0xFF2D2D59),
       height: 140,
       child: Column(
@@ -12,20 +13,7 @@ class BannerWidget extends StatelessWidget{
           Padding(
             padding: EdgeInsets.all(20),
             child: Row(children: [
-              Container(
-                width: 50,
-                height: 50,
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle, color: Color(0xFFFF6D00)),
-                child: Center(
-                  child: GestureDetector(
-                    child: Icon(
-                      Icons.exit_to_app,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              )
+              BannerIconWidget()
             ]),
           ),
           Padding(
@@ -44,5 +32,4 @@ class BannerWidget extends StatelessWidget{
       ),
     );
   }
-
 }
