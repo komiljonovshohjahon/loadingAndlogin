@@ -27,27 +27,34 @@ class _DropdownWidgetState extends State<DropdownWidget> {
         children: [
           TextInputLabelWidget(icon: icon, label: label),
           Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(24.0),
+              color: Colors.white,
+            ),
             padding: EdgeInsets.only(top: 5),
             height: 60,
-            child: DropdownButtonFormField(
-              isExpanded: true,
-              decoration: InputDecoration(
-                labelText: label,
-                border:
-                    OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+            child: DropdownButtonHideUnderline(
+              child: DropdownButton(
+                hint: Text("data"),
+                isExpanded: true,
+                // decoration: InputDecoration(
+                //   labelText: label,
+                //   border:
+                //       OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                // ),
+                items: items
+                    .map((label) => DropdownMenuItem(
+                          child: Text(label),
+                          value: label,
+                        ))
+                    .toList(),
+                onChanged: (String newVal) {
+                  setState(() {
+                    _chosenValue = newVal;
+                  });
+                },
+                //hint: new Text("Select City"),
               ),
-              items: items
-                  .map((label) => DropdownMenuItem(
-                        child: Text(label),
-                        value: label,
-                      ))
-                  .toList(),
-              onChanged: (String newVal) {
-                setState(() {
-                  _chosenValue = newVal;
-                });
-              },
-              //hint: new Text("Select City"),
             ),
           ),
         ],
